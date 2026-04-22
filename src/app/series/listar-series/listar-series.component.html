@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Listado de Series</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Canal</th>
+        <th>Temporadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (serie of series; track serie.id) {
+        <tr>
+          <td>{{ serie.id }}</td>
+          <td>{{ serie.name }}</td>
+          <td>{{ serie.channel }}</td>
+          <td>{{ serie.seasons }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <p class="mt-3">
+    <strong>Promedio de temporadas:</strong> {{ promedio | number:'1.2-2' }}
+  </p>
+</div>
